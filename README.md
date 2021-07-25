@@ -1,4 +1,4 @@
-read CSV file data
+Read CSV file data
 #AI_Prog
 #Java_course
 #task1
