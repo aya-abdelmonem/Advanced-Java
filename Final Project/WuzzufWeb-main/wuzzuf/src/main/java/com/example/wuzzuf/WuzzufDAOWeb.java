@@ -82,32 +82,36 @@ public class WuzzufDAOWeb {
         return required_skills;
     }
 
-    public List<Number> factorize_YearsExp(Table table) {
-        //NumberColumn min_ExpYears = null;
-        StringColumn years = (StringColumn) table.column("YearsExp");
+     public Table factorize_YearsExp(Table table){
+        //List<?> years =table.column("YearsExp").asList();
+        StringColumn years = (StringColumn) table.column ("YearsExp");
         //System.out.println(years.size());
-        List<Number> mapped_ExpYears = new ArrayList<Number>();
-        for (String year : years) {
+        List<Number> mapped_ExpYears = new ArrayList<Number> ();
+        for (String year : years){
             String[] n = year.split("");
-            StringBuffer f = new StringBuffer();
-
+            List<String> f = new ArrayList<>();
             for (String s : n) {
+                //System.out.println(f);
                 if (s.matches("[0-9]+")) {
-                    f.append(s);
+                    f.add(s);
                 } else {
                     break;
                 }
-                if (f.length() != 0) {
-                    mapped_ExpYears.add(Integer.parseInt(String.valueOf(f)));
-                    //f.setLength(0);
-                } else {
-                    mapped_ExpYears.add(Integer.parseInt("0"));
-                }
+
+            }
+            if (f.size()!= 0) {
+                String num = String.join("", f);
+                System.out.println(num);
+                System.out.println("");
+                mapped_ExpYears.add(Integer.parseInt(num));
+                // f.setLength(0);
+            } else {
+                mapped_ExpYears.add(0);
             }
         }
-        //NumberColumn min_ExpYears = DoubleColumn.create ("min_ExpYears", mapped_ExpYears);
-        //table.addColumns (min_ExpYears);
-        return mapped_ExpYears;//table;
+        NumberColumn min_ExpYears = DoubleColumn.create ("min_ExpYears", mapped_ExpYears);
+        table.addColumns (min_ExpYears);
+        return table;
     }
 
 }

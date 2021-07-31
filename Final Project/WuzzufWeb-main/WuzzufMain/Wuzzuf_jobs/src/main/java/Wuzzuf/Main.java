@@ -56,9 +56,8 @@ public class Main {
             System.in.read ();
 
             //factorize the YearsExp feature and convert it to numbers in new col
-            List<Number> new_table = data.factorize_YearsExp(data.wuzzufData);
-            System.out.println (new_table);//.first(20));
-            System.out.println (new_table.size());
+            Table new_table = data.factorize_YearsExp(data.wuzzufData);
+            System.out.println (new_table.first(20));
             System.out.println ("=====================================================================================");
             System.in.read ();
 
