@@ -30,23 +30,31 @@ public class Main {
             System.out.println ("=====================================================================================");
             System.in.read ();
 
-            //Count the jobs for each company and display that in order
             Table company_jobs = data.count_company_jobs(data.wuzzufData);
             System.out.println (company_jobs);
             System.out.println ("=====================================================================================");
-            System.in.read ();
-
+           // System.in.read ();
+           
+            dataRepresentation.graphjobs(data.wuzzufData);
+            
             //the most popular job titles
             Table job_freq = data.count_jobs(data.wuzzufData);
             System.out.println (job_freq);
             System.out.println ("=====================================================================================");
-            System.in.read ();
+            //System.in.read ();
+
+          dataRepresentation.graphTitlejob(data.wuzzufData);  
+            
+           
 
             //the most popular areas
             Table area_freq = data.count_areas(data.wuzzufData);
             System.out.println (area_freq);
             System.out.println ("=====================================================================================");
             System.in.read ();
+            
+            
+          dataRepresentation.graphLocation(data.wuzzufData);
 
             //the most important required skills
             Table required_skills = data.get_required_skills(data.wuzzufData);
