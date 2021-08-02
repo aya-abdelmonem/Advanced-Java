@@ -1,9 +1,5 @@
 # WuzzufWeb
-# Team members:
- 1. Alaa Ibrahim Eraky
- 2. Aya Abd ELmonem Eldreny
- 3. Rawan mohammad almahallawy
-  
+
 # Data Set:
 Wuzzuf jobs in Egypt data set at Kaggle
 https://www.kaggle.com/omarhanyy/wuzzuf-jobs
